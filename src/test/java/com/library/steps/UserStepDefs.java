@@ -6,13 +6,19 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.sql.SQLOutput;
+
 public class UserStepDefs {
 
     String actualUserCount;
     @Given("Establish the database connection")
     public void establish_the_database_connection() {
         // Make a conn with library
-        DB_Util.createConnection();
+        // DB_Util.createConnection();
+        System.out.println("--------------------------------------------------");
+        System.out.println("--- CONNECTION WILL BE DONE WITH BEFORE HOOK -----");
+        System.out.println("--------------------------------------------------");
+
     }
     @When("Execute query to get all IDs from users")
     public void execute_query_to_get_all_i_ds_from_users() {
@@ -33,6 +39,9 @@ public class UserStepDefs {
         Assert.assertEquals(expectedUserCount,actualUserCount);
 
         //Close Conn
-        DB_Util.destroy();
+        // DB_Util.destroy();
+        System.out.println("--------------------------------------------------");
+        System.out.println("--- CONNECTION WILL BE CLOSED WITH AFTER HOOK -----");
+        System.out.println("--------------------------------------------------");
     }
 }
