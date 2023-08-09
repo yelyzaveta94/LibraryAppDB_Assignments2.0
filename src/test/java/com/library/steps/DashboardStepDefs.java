@@ -20,7 +20,7 @@ public class DashboardStepDefs {
 
 
         loginPage.login(user);
-        BrowserUtil.waitFor(2);
+        BrowserUtil.waitFor(3);
 
     }
     String actualBorrowedBook;
