@@ -12,6 +12,7 @@ import java.util.List;
 public class UserStepDefs {
 
     String actualUserCount;
+
     @Given("Establish the database connection")
     public void establish_the_database_connection() {
         // Make a conn with library
@@ -48,19 +49,22 @@ public class UserStepDefs {
 
 
     // US01-2
+    List<String> actualColumnList;
     @When("Execute query to get all columns")
     public void execute_query_to_get_all_columns() {
         String query="select * from users";
 
         DB_Util.runQuery(query);
 
-        List<String> actualColumnList = DB_Util.getAllColumnNamesAsList();
+        actualColumnList = DB_Util.getAllColumnNamesAsList();
 
         System.out.println("actualColumnList = " + actualColumnList);
-
     }
+
     @Then("verify the below columns are listed in result")
     public void verify_the_below_columns_are_listed_in_result(List<String> expectedColumns) {
+        System.out.println("expectedColumns = " + expectedColumns);
 
+        Assert.assertEquals(expectedColumns,actualColumnList);
     }
 }
