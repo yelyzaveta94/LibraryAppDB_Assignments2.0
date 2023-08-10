@@ -1,6 +1,5 @@
 package com.library.steps;
 
-import com.library.pages.LoginPage;
 import com.library.utility.DB_Util;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +9,7 @@ import org.junit.Assert;
 
 import java.util.List;
 
-public class UserStepDefs {
+public class US01_StepDefs {
 
 
 

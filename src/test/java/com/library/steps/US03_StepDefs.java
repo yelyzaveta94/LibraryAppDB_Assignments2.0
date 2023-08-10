@@ -9,7 +9,7 @@ import org.junit.Assert;
 
 import java.util.List;
 
-public class BookCategoriesStepDefs {
+public class US03_StepDefs {
     BookPage bookPage=new BookPage();
 
     @When("the user navigates to {string} page")

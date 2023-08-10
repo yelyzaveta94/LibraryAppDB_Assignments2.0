@@ -3,7 +3,7 @@ package com.library.steps;
 import com.library.pages.BookPage;
 import io.cucumber.java.en.*;
 
-public class BookInfoStepDefs {
+public class US04_StepDefs {
 
     BookPage bookPage = new BookPage();
     String globalBookName;
